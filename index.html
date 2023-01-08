@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Generator</title>
+</head>
+<!-- Stylesheet -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    P {
+        width: 7.2rem;
+        font-size: 5rem;
+        height: 8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        color: green;
+        box-shadow: #c1c1c1 2px 0px 8px;
+        text-shadow: #c1c1c1 2px 2px 1px;
+    }
+
+    section {
+        width: auto;
+        height: 5rem;
+        padding: 0rem 2rem;
+        display: flex;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;
+        box-shadow: #c1c1c1 2px 0px 8px;
+        margin: 0;
+        text-shadow: #c1c1c1 2px 2px 1px;
+    }
+
+    main {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: #c1c1c1 2px 0px 8px;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    span {
+        color: green;
+        margin-left: 0.5rem;
+        font-size: 2rem;
+
+    }
+
+    @media (max-width:640px) {
+        :root {
+            font-size: 9px;
+        }
+
+        section {
+            padding: 0rem 1rem;
+
+        }
+
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+    }
+</style>
+
+<body>
+    <main>
+        <section>
+            <h1></h1><span></span>
+        </section>
+        <p></p>
+    </main>
+    <!-- Javascript -->
+    <script>
+        let main = document.querySelector('main')
+        let h1 = document.querySelector('h1')
+        h1.textContent = 'Press any Keyboard key'
+        window.addEventListener('keyup', (e) => {
+            main.innerHTML = `<section>
+                <h1>You Pressed</h1><span>${e.key}</span>
+            </section>
+            <p>${e.keyCode}</p>`
+        })
+    </script>
+
+</body>
+
+</html>
